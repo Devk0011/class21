@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!-- saved from url=(0012)about:srcdoc -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js" crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js" crossorigin=""></script>
+    
+    
+
+  <!--<base href="https://editor.p5js.org/rupin/sketches/UDOEMKpim/">--><base href="."><style>
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+</style><script src="https://editor.p5js.org/previewScripts.js"></script><style data-emotion=""></style><script>
+    function getScriptOff(line) {
+      var offs = [[54,"sketch"],[113,"Building"]];
+      var l = 0;
+      var file = '';
+      for (var i=0; i<offs.length; i++) {
+        var n = offs[i][0];
+        if (n < line && n > l) {
+          l = n;
+          file = offs[i][1];
+        }
+      }
+      return [line - l, file];
+    }
+    // catch reference errors, via http://stackoverflow.com/a/12747364/2994108
+    window.onerror = function (msg, url, lineNumber, columnNo, error) {
+        var string = msg.toLowerCase();
+        var substring = "script error";
+        var data = {};
+        if (url.match(/^(http:\/\/|https:\/\/)/) !== null && error.stack){
+          var errorNum = error.stack.split('about:srcdoc:')[1].split(':')[0];
+          var fileInfo = getScriptOff(errorNum);
+          data = msg + ' (' + fileInfo[1] + ': line ' + fileInfo[0] + ')';
+        } else {
+          var fileInfo = getScriptOff(lineNumber);
+          data = msg + ' (' + fileInfo[1] + ': line ' + fileInfo[0] + ')';
+        }
+        window.parent.postMessage([{
+          log: [{
+            method: 'error',
+            data: [data],
+            id: Date.now().toString()
+          }],
+          source: fileInfo[1]
+        }], '*');
+      return false;
+    };
+  </script></head>
+  <body>
+    <script data-tag="@fs-sketch.js">var b1, b2,b3,b4,b5,b6,b7,b8,b9,b10;
+
+function setup() {
+  createCanvas(400, 400);
+ b1=new Building();
+ b1.position=1;
+ b1.floors=28;
+  
+  b2=new Building();
+  b2.position=2;
+  b2.floors=12;
+
+  b3=new Building();
+  b3.position=3;
+b3.floors=22;
+  
+  b4=new Building();
+ b4.position=4;
+  b4.floors=40;
+  
+  b5=new Building();
+  b5.position=5;
+  b5.floors=30;
+  
+  b6=new Building();
+  b6.position=6;
+  b6.floors=11;
+  
+  b7=new Building();
+  b7.position=7;
+  b7.floors=35;
+  
+  b8=new Building();
+  b8.position=8;
+  b8.floors=31;
+  
+  b9=new Building();
+  b9.position=9;
+  b9.floors=15;
+  
+  b10=new Building();
+  b10.position=10;
+  b10.floors=45
+  
+}
+
+function draw() {
+  background(0);
+b1.display();
+b2.display();
+  b3.display();
+  b4.display();
+  b5.display();
+  b6.display();
+  b7.display();
+  b8.display();
+  b9.display();
+  b10.display();
+}</script>
+    <script data-tag="@fs-Building.js">class Building{
+  constructor()
+  {
+    this.height=10;
+    this.position=1;    
+    this.yPosition=390;
+    this.width=25;
+    this.floors=10;
+    
+    //Each floor is approximately equal to 12 feet
+    //If a building has 3 floors it would be 3*12=36 feet high.
+    this.building_height=this.floors*12;
+    
+  }  
+  display()
+  {
+   this.height=this.floors*8;
+   this.yPosition=395-(this.height);
+    //this.xPosition=395-(this.height);
+   this.xPosition=this.position*40;
+   rect(this.xPosition,this.yPosition, this.width, this.height); 
+  }  
+  
+}
+</script>
+  
+
+<canvas id="defaultCanvas0" class="p5Canvas" width="400" height="400" style="width: 400px; height: 400px;"></canvas></body></html>
